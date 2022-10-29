@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
 export const Banner = () => {
-  const toRotate = ["Hello world!", "Hello internet!"];
   const [rotationPosition, setRotationPosition] = useState(0);
   const [typingLetter, setTypingLetter] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [delta, setDelta] = useState(300);
   const period = 2000;
 
-  const typing = () => {
+  const typing = useCallback(() => {
+    const toRotate = ["Hello world!", "Hello internet!"];
     let i = rotationPosition % toRotate.length;
     let fullText = toRotate[i];
     let updatedText = isDeleting
@@ -34,7 +34,7 @@ export const Banner = () => {
       setRotationPosition(rotationPosition + 1);
       setDelta(300);
     }
-  };
+  }, [isDeleting, rotationPosition, typingLetter.length]);
 
   useEffect(() => {
     let typer = setInterval(() => {
@@ -44,7 +44,7 @@ export const Banner = () => {
     return () => {
       clearInterval(typer);
     };
-  }, [typingLetter, delta]);
+  }, [typingLetter, delta, typing]);
 
   return (
     <section className="banner" id="home">
