@@ -13,16 +13,6 @@ export const Banner = () => {
   const [delta, setDelta] = useState(300);
   const period = 2000;
 
-  useEffect(() => {
-    let typer = setInterval(() => {
-      typing();
-    }, delta);
-
-    return () => {
-      clearInterval(typer);
-    };
-  }, [typingLetter]);
-
   const typing = () => {
     let i = rotationPosition % toRotate.length;
     let fullText = toRotate[i];
@@ -46,6 +36,16 @@ export const Banner = () => {
     }
   };
 
+  useEffect(() => {
+    let typer = setInterval(() => {
+      typing();
+    }, delta);
+
+    return () => {
+      clearInterval(typer);
+    };
+  }, [typingLetter, delta]);
+
   return (
     <section className="banner" id="home">
       <Container>
@@ -62,7 +62,7 @@ export const Banner = () => {
             </p>
             <Router>
               <Link to="#connect">
-                <button className="vvd">
+                <button className="connectBtn">
                   <span>Let’s Connect</span>
                   <ArrowRightCircle size={25} />
                 </button>
