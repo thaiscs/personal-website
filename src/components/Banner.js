@@ -1,9 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Nav, Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
 
 export const Banner = () => {
   const [rotationPosition, setRotationPosition] = useState(0);
@@ -59,14 +57,12 @@ export const Banner = () => {
             </span>{" "}
             navigating the <span>magic</span> world of developing the web.
           </p>
-          <Router>
-            <Link to="#contact">
-              <button className="connectBtn">
-                <span>Let’s Connect</span>
-                <ArrowRightCircle size={25} />
-              </button>
-            </Link>
-          </Router>
+          <Nav.Link href="#contact">
+            <button className="connectBtn">
+              <span>Let’s Connect</span>
+              <ArrowRightCircle size={25} />
+            </button>
+          </Nav.Link>
         </Col>
         <Col xs={12} md={6} xl={5}>
           <img src={headerImg} alt="Header Img" />

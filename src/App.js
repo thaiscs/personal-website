@@ -6,6 +6,7 @@ import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { InView } from "react-intersection-observer";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const highlightNavigation = (inView, navItem) => {
   inView
@@ -14,17 +15,19 @@ const highlightNavigation = (inView, navItem) => {
         .querySelector(`a[href="#${navItem}"]`)
         .classList.remove("active");
 };
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <NavBar />
-      <InView onChange={(inView) => highlightNavigation(inView, "home")}>
-        {({ ref }) => (
-          <section className="banner" id="home" ref={ref}>
-            <Banner />
-          </section>
-        )}
-      </InView>
+      <Router>
+        <NavBar />
+        <InView onChange={(inView) => highlightNavigation(inView, "home")}>
+          {({ ref }) => (
+            <section className="banner" id="home" ref={ref}>
+              <Banner />
+            </section>
+          )}
+        </InView>
+      </Router>
       <InView onChange={(inView) => highlightNavigation(inView, "skills")}>
         {({ ref }) => (
           <section className="skill" id="skills" ref={ref}>
@@ -42,6 +45,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

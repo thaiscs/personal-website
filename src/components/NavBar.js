@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { BrowserRouter as Router } from "react-router-dom";
 import { Socials } from "./Socials";
 
 export const NavBar = () => {
@@ -26,51 +25,47 @@ export const NavBar = () => {
   };
 
   return (
-    <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container>
-          <span className="tagline">
-            Welcome to my <code>coding</code> journey
-          </span>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link
-                href="#home"
-                className={
-                  activeLink === "home" ? "active navbar-link" : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("home")}
-              >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                href="#skills"
-                className={
-                  activeLink === "skills" ? "active navbar-link" : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("skills")}
-              >
-                Skills
-              </Nav.Link>
-              <Nav.Link
-                href="#contact"
-                className={
-                  activeLink === "contact"
-                    ? "active navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("contact")}
-              >
-                Contact
-              </Nav.Link>
-            </Nav>
-            <Socials />
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </Router>
+    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Container>
+        <span className="tagline">
+          Welcome to my <code>coding</code> journey
+        </span>
+        <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <span className="navbar-toggler-icon"></span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link
+              href="#home"
+              className={
+                activeLink === "home" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("home")}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="#skills"
+              className={
+                activeLink === "skills" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("skills")}
+            >
+              Skills
+            </Nav.Link>
+            <Nav.Link
+              href="#contact"
+              className={
+                activeLink === "contact" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("contact")}
+            >
+              Contact
+            </Nav.Link>
+          </Nav>
+          <Socials />
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
