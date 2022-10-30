@@ -47,33 +47,31 @@ export const Banner = () => {
   }, [typingLetter, delta, typing]);
 
   return (
-    <section className="banner" id="home">
-      <Container>
-        <Row className="aligh-items-center">
-          <Col xs={12} md={6} xl={7}>
-            <h1>
-              <span className="wrap">{typingLetter}</span>
-            </h1>
-            <p>
-              <span style={{ fontWeight: "bold", fontStyle: "normal" }}>
-                Since 2019
-              </span>{" "}
-              navigating the <span>magic</span> world of developing the web.
-            </p>
-            <Router>
-              <Link to="#connect">
-                <button className="connectBtn">
-                  <span>Let’s Connect</span>
-                  <ArrowRightCircle size={25} />
-                </button>
-              </Link>
-            </Router>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <img src={headerImg} alt="Header Img" />
-          </Col>
-        </Row>
-      </Container>
-    </section>
+    <Container>
+      <Row className="aligh-items-center">
+        <Col xs={12} md={6} xl={7}>
+          <h1>
+            <span className="wrap">{typingLetter}</span>
+          </h1>
+          <p>
+            <span style={{ fontWeight: "bold", fontStyle: "normal" }}>
+              Since 2019
+            </span>{" "}
+            navigating the <span>magic</span> world of developing the web.
+          </p>
+          <Router>
+            <Link to="#contact">
+              <button className="connectBtn">
+                <span>Let’s Connect</span>
+                <ArrowRightCircle size={25} />
+              </button>
+            </Link>
+          </Router>
+        </Col>
+        <Col xs={12} md={6} xl={5}>
+          <img src={headerImg} alt="Header Img" />
+        </Col>
+      </Row>
+    </Container>
   );
 };

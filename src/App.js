@@ -3,18 +3,42 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { NavBar } from "./components/NavBar";
 import { Banner } from "./components/Banner";
 import { Skills } from "./components/Skills";
-import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { InView } from "react-intersection-observer";
 
+const highlightNavigation = (inView, navItem) => {
+  inView
+    ? document.querySelector(`a[href="#${navItem}"]`).classList.add("active")
+    : document
+        .querySelector(`a[href="#${navItem}"]`)
+        .classList.remove("active");
+};
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Banner />
-      <Skills />
-      <Projects />
-      <Contact />
+      <InView onChange={(inView) => highlightNavigation(inView, "home")}>
+        {({ ref }) => (
+          <section className="banner" id="home" ref={ref}>
+            <Banner />
+          </section>
+        )}
+      </InView>
+      <InView onChange={(inView) => highlightNavigation(inView, "skills")}>
+        {({ ref }) => (
+          <section className="skill" id="skills" ref={ref}>
+            <Skills />
+          </section>
+        )}
+      </InView>
+      <InView onChange={(inView) => highlightNavigation(inView, "contact")}>
+        {({ ref }) => (
+          <section className="contact" id="contact" ref={ref}>
+            <Contact />
+          </section>
+        )}
+      </InView>
       <Footer />
     </div>
   );
