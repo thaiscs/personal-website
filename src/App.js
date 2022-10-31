@@ -1,11 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { NavBar } from "./components/NavBar";
-import { Banner } from "./components/Banner";
-import { Skills } from "./components/Skills";
-import { Contact } from "./components/Contact";
+import { Section } from "./components/Section";
 import { Footer } from "./components/Footer";
-import { InView } from "react-intersection-observer";
+import { InView, useInView } from "react-intersection-observer";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const highlightNavigation = (inView, navItem) => {
@@ -16,32 +14,24 @@ const highlightNavigation = (inView, navItem) => {
         .classList.remove("active");
 };
 const App = () => {
+  useInView({ rootMargin: "300px" });
+
+  const sections = ["home", "skills", "contact"];
+
   return (
     <div className="App">
       <Router>
         <NavBar />
-        <InView onChange={(inView) => highlightNavigation(inView, "home")}>
-          {({ ref }) => (
-            <section className="banner" id="home" ref={ref}>
-              <Banner />
-            </section>
-          )}
-        </InView>
+        {sections.map((section) => (
+          <InView onChange={(inView) => highlightNavigation(inView, section)}>
+            {({ ref }) => (
+              <section className={section} id={section} ref={ref}>
+                <Section name={section} />
+              </section>
+            )}
+          </InView>
+        ))}
       </Router>
-      <InView onChange={(inView) => highlightNavigation(inView, "skills")}>
-        {({ ref }) => (
-          <section className="skill" id="skills" ref={ref}>
-            <Skills />
-          </section>
-        )}
-      </InView>
-      <InView onChange={(inView) => highlightNavigation(inView, "contact")}>
-        {({ ref }) => (
-          <section className="contact" id="contact" ref={ref}>
-            <Contact />
-          </section>
-        )}
-      </InView>
       <Footer />
     </div>
   );
