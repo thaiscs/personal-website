@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { NavBar } from "./components/NavBar";
 import { Section } from "./components/Section";
 import { Footer } from "./components/Footer";
-import { InView, useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const highlightNavigation = (inView, navItem) => {
@@ -14,8 +14,6 @@ const highlightNavigation = (inView, navItem) => {
         .classList.remove("active");
 };
 const App = () => {
-  useInView({ rootMargin: "300px" });
-
   const sections = ["home", "skills", "contact"];
 
   return (
@@ -23,7 +21,10 @@ const App = () => {
       <Router>
         <NavBar />
         {sections.map((section) => (
-          <InView onChange={(inView) => highlightNavigation(inView, section)}>
+          <InView
+            key={section}
+            onChange={(inView) => highlightNavigation(inView, section)}
+          >
             {({ ref }) => (
               <section className={section} id={section} ref={ref}>
                 <Section name={section} />

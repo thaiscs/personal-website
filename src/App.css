@@ -307,7 +307,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Skills Css ************/
-.skill {
+.skills {
   padding: 0 0 50px 0;
   position: relative;
 }
@@ -318,9 +318,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 60px 50px;
   margin-top: -60px;
 }
-.skill h2 {
+.skills h2 {
 	font-size: 45px;
 	font-weight: 700;
+  margin-bottom: 24px;
 }
 .skill p {
     color: #B8B8B8;
@@ -335,7 +336,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .skill-slider .item img {
-  width: 50%;
+  width: 60%;
   margin: 0 auto 15px auto;
 }
 .background-image-left {
@@ -518,9 +519,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 14px 48px;
   font-size: 18px;
   margin-top: 25px;
-  border-radius: 0;
   position: relative;
   transition: 0.3s ease-in-out;
+  border-radius: 18px;
 }
 .contact form button span {
   z-index: 1;
@@ -621,4 +622,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+/************ Carousel customization ************/
+
+.react-multiple-carousel__arrow--left {
+  left: calc(0% + 1px) !important;
+}
+.react-multiple-carousel__arrow--right {
+  right: calc(0% + 1px) !important;
 }
