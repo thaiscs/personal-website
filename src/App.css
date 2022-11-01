@@ -95,7 +95,7 @@ nav.navbar {
   transition:  0.32s ease-in-out;
 }
 nav.navbar.scrolled {
-  padding: 0px 0;
+  padding: 12px 0;
   background-color: #121212;
 }
 nav.navbar a.navbar-brand {
@@ -105,9 +105,12 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
   letter-spacing: 0.8px;
-  padding: 0 25px;
+  padding: 12px;
   font-size: 18px;
   opacity: 0.75;
+  background-color: #482256;
+  border-radius: 8px;
+  margin: 2px;
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
@@ -120,6 +123,7 @@ span.navbar-text {
 .social-icon {
     display: inline-block;
     margin-left: 14px;
+    padding: 12px 0px;
 }
 .social-icon a {
     width: 42px;
@@ -244,6 +248,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   display: inline-block;
+  flex-basis: 70%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .tagline {
+    flex-basis: 35%;
+  }
+}
+@media (min-width: 992px) {
+  .tagline {
+    flex-basis: 40%;
+  }
 }
 
 /************ home Css ************/
@@ -545,6 +562,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   left: 0;
   z-index: 0;
   transition: 0.3s ease-in-out;
+  border-radius: 18px;
 }
 .contact form button:hover::before {
   width: 100%;
@@ -552,7 +570,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Footer Css ************/
 .footer {
-  padding: 0 0 50px 0;
+  padding: 24px;
   background-image: url('./assets/img/footer-bg.png');
   background-position: center center;
   background-size: cover;
