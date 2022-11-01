@@ -26,11 +26,17 @@ export const Contact = () => {
   const removeFeedbackMessage = () => {
     setTimeout(() => {
       setStatus({});
-    }, 3000);
+      setButtonText("Send");
+    }, 10000);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const isRequiredFieldFilled = () => {
+    return Object.entries(formDetails)
+      .filter(([category, value]) => category !== "phone")
+      .every(([category, value]) => value !== "");
+  };
+
+  const sendEmail = async () => {
     setButtonText("Sending...");
     let response = await fetch("http://localhost:5000/contact", {
       method: "POST",
@@ -39,19 +45,26 @@ export const Contact = () => {
       },
       body: JSON.stringify(formDetails),
     });
-    setButtonText("Send");
     let result = await response.json();
-    setFormDetails(formInitialDetails);
     if (result.code === 200) {
-      setStatus({ succes: true, message: "Message sent successfully" });
-      removeFeedbackMessage();
+      setStatus({ succes: true, message: "Message sent!" });
+      setFormDetails(formInitialDetails);
     } else {
       setStatus({
         succes: false,
         message: "Something went wrong, please try again later.",
       });
-      removeFeedbackMessage();
     }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    isRequiredFieldFilled()
+      ? sendEmail()
+      : setStatus({
+          success: false,
+          message: "Fill out all required fields, please.",
+        });
+    removeFeedbackMessage();
   };
 
   return (
@@ -63,7 +76,7 @@ export const Contact = () => {
               <img
                 className={isVisible ? "animate__animated animate__zoomIn" : ""}
                 src={contactImg}
-                alt="Contact Us"
+                alt=""
               />
             )}
           </TrackVisibility>
@@ -94,7 +107,7 @@ export const Contact = () => {
                 <Col size={12} sm={6} className="px-1">
                   <input
                     type="text"
-                    value={formDetails.lasttName}
+                    value={formDetails.lastName}
                     placeholder="Last Name"
                     onChange={(e) => onFormUpdate("lastName", e.target.value)}
                   />
@@ -111,7 +124,7 @@ export const Contact = () => {
                   <input
                     type="tel"
                     value={formDetails.phone}
-                    placeholder="Phone No."
+                    placeholder="Telephone (optional)"
                     onChange={(e) => onFormUpdate("phone", e.target.value)}
                   />
                 </Col>
