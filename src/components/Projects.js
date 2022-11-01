@@ -4,6 +4,9 @@ import jsIcon from "../assets/img/icons8-javascript.svg";
 import twIcon from "../assets/img/icons8-tailwind-css-240.svg";
 import sassIcon from "../assets/img/icons8-sass.svg";
 import rubyIcon from "../assets/img/icons8-ruby-programming-language.svg";
+import postgresIcon from "../assets/img/icons8-postgresql.svg";
+import expressIcon from "../assets/img/expressjs.svg";
+import nodeIcon from "../assets/img/icons8-nodejs.svg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 
@@ -45,9 +48,19 @@ export const Projects = () => {
     ],
     backend: [
       {
-        title: "Ruby on Rails",
-        description: "Model-View-Controller",
-        imgUrl: rubyIcon,
+        title: "PostgreSQL",
+        description: "Relational Database",
+        imgUrl: postgresIcon,
+      },
+      {
+        title: "Express",
+        description: "RESTful APIs",
+        imgUrl: expressIcon,
+      },
+      {
+        title: "Node.js",
+        description: "Server Side",
+        imgUrl: nodeIcon,
       },
     ],
   });
