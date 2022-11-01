@@ -86,7 +86,7 @@ export const Projects = () => {
                 >
                   {stack.map(([side]) => {
                     return (
-                      <Nav.Item>
+                      <Nav.Item key={side}>
                         <Nav.Link eventKey={side}>{side}</Nav.Link>
                       </Nav.Item>
                     );
@@ -95,10 +95,10 @@ export const Projects = () => {
                 <Tab.Content id="slideInUp">
                   {stack.map(([side, list]) => {
                     return (
-                      <Tab.Pane eventKey={side}>
+                      <Tab.Pane eventKey={side} key={side}>
                         <Row>
                           {list.map((stack) => {
-                            return <ProjectCard key={stack} {...stack} />;
+                            return <ProjectCard key={stack.title} {...stack} />;
                           })}
                         </Row>
                       </Tab.Pane>
