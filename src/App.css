@@ -76,10 +76,14 @@ input:focus, textarea:focus, select:focus {
 
 p.success {
 	color: green;
+  font-size: x-large;
+  font-weight: 500;
 }
 
 p.danger {
 	color: red;
+  font-size: x-large;
+  font-weight: 500;
 }
 /************ Navbar Css ************/
 nav.navbar {

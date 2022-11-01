@@ -23,6 +23,12 @@ export const Contact = () => {
     });
   };
 
+  const removeFeedbackMessage = () => {
+    setTimeout(() => {
+      setStatus({});
+    }, 3000);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
@@ -38,11 +44,13 @@ export const Contact = () => {
     setFormDetails(formInitialDetails);
     if (result.code === 200) {
       setStatus({ succes: true, message: "Message sent successfully" });
+      removeFeedbackMessage();
     } else {
       setStatus({
         succes: false,
         message: "Something went wrong, please try again later.",
       });
+      removeFeedbackMessage();
     }
   };
 
@@ -64,6 +72,16 @@ export const Contact = () => {
           <div>
             <h2>Get In Touch</h2>
             <form onSubmit={handleSubmit}>
+              {status.message && (
+                <Row>
+                  <p
+                    className={status.success === false ? "danger" : "success"}
+                  >
+                    {status.message}
+                  </p>
+                </Row>
+              )}
+
               <Row>
                 <Col size={12} sm={6} className="px-1">
                   <input
@@ -108,17 +126,6 @@ export const Contact = () => {
                     <span>{buttonText}</span>
                   </button>
                 </Col>
-                {status.message && (
-                  <Col>
-                    <p
-                      className={
-                        status.success === false ? "danger" : "success"
-                      }
-                    >
-                      {status.message}
-                    </p>
-                  </Col>
-                )}
               </Row>
             </form>
           </div>
