@@ -39,7 +39,7 @@ export const Contact = () => {
   const sendEmail = async () => {
     setButtonText("Sending...");
     let response = await fetch(
-      "https://effulgent-frangollo-391ad4.netlify.app/contact",
+      "https://personal-website-nodemailer.herokuapp.com/contact",
       {
         method: "POST",
         headers: {
