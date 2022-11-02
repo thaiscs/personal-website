@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/personal-website/static/css/main.722f0a74.css",
+    "main.js": "/personal-website/static/js/main.acb9072c.js",
+    "static/js/787.fb771931.chunk.js": "/personal-website/static/js/787.fb771931.chunk.js",
+    "static/media/color-sharp2.png": "/personal-website/static/media/color-sharp2.c87586c6c2f549cb4aa6.png",
+    "static/media/banner-bg.png": "/personal-website/static/media/banner-bg.cc1273af450504afe755.png",
+    "static/media/header-img.svg": "/personal-website/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
+    "static/media/CentraNo2-Bold.ttf": "/personal-website/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
+    "static/media/CentraNo2-Medium.ttf": "/personal-website/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
+    "static/media/CentraNo2-Book.ttf": "/personal-website/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
+    "static/media/footer-bg.png": "/personal-website/static/media/footer-bg.7bd67c0f73571d0acc02.png",
+    "static/media/contact-img.svg": "/personal-website/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
+    "static/media/revicons.eot": "/personal-website/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/personal-website/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/icons8-postgresql.svg": "/personal-website/static/media/icons8-postgresql.3f7dcf66bc7a7b554c1acac39a28ca2c.svg",
+    "static/media/revicons.woff": "/personal-website/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/icons8-nodejs.svg": "/personal-website/static/media/icons8-nodejs.aff9ea428910107140ca088ded6675d5.svg",
+    "static/media/icons8-ruby-programming-language.svg": "/personal-website/static/media/icons8-ruby-programming-language.63c47e4f8894703c7b7cfb1867396edc.svg",
+    "static/media/icons8-sass.svg": "/personal-website/static/media/icons8-sass.299a7718a2a3e46caf77580d6d516be3.svg",
+    "static/media/meter2.svg": "/personal-website/static/media/meter2.1b8f416eccd1ee162218b8528a1c5cdc.svg",
+    "static/media/meter1.svg": "/personal-website/static/media/meter1.c4085ff859afbd8488e9da47d4953850.svg",
+    "static/media/meter3.svg": "/personal-website/static/media/meter3.2201f7e4df22bc4b08180210474f28cc.svg",
+    "static/media/expressjs.svg": "/personal-website/static/media/expressjs.40f83ae49fd88587abc230a683ba2c9f.svg",
+    "static/media/icons8-javascript.svg": "/personal-website/static/media/icons8-javascript.78960278f6971b4f0ff5c5c99776bf95.svg",
+    "static/media/icons8-tailwind-css-240.svg": "/personal-website/static/media/icons8-tailwind-css-240.7ed74927124b1bc563a6622a1f5b86b3.svg",
+    "static/media/icons8-github.svg": "/personal-website/static/media/icons8-github.d606ae82db94e145528d2e5043656722.svg",
+    "index.html": "/personal-website/index.html",
+    "static/media/nav-icon1.svg": "/personal-website/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
+    "main.722f0a74.css.map": "/personal-website/static/css/main.722f0a74.css.map",
+    "main.acb9072c.js.map": "/personal-website/static/js/main.acb9072c.js.map",
+    "787.fb771931.chunk.js.map": "/personal-website/static/js/787.fb771931.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.722f0a74.css",
+    "static/js/main.acb9072c.js"
+  ]
+}
